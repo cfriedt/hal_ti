@@ -5628,7 +5628,7 @@ RF_Stat RF_setTxPower(RF_Handle handle, RF_TxPowerTable_Value value)
     RF_Stat status;
 
     /* Placeholder of the command to be used to update the PA configuration within the RF core immediately. */
-    RF_ConfigurePaCmd configurePaCmd;
+    static RF_ConfigurePaCmd configurePaCmd;
 
     /* Update the setup command to make the changes permanent. */
     status = RF_updatePaConfiguration(handle->clientConfig.pRadioSetup, value, &configurePaCmd);
